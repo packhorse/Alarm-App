@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B875801A214069DD009F4711 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8758019214069DD009F4711 /* AlarmTableViewCell.swift */; };
+		B875801E21406A53009F4711 /* AlarmsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875801D21406A53009F4711 /* AlarmsTableViewController.swift */; };
+		B875802021406A72009F4711 /* AlarmsDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875801F21406A72009F4711 /* AlarmsDetailTableViewController.swift */; };
+		B875802221406AAD009F4711 /* Alarm controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B875802121406AAD009F4711 /* Alarm controller.swift */; };
 		B8A2FF12213DC81C00A87A6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A2FF11213DC81C00A87A6E /* AppDelegate.swift */; };
 		B8A2FF17213DC81C00A87A6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A2FF15213DC81C00A87A6E /* Main.storyboard */; };
 		B8A2FF19213DC81D00A87A6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8A2FF18213DC81D00A87A6E /* Assets.xcassets */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B8758019214069DD009F4711 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
+		B875801D21406A53009F4711 /* AlarmsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsTableViewController.swift; sourceTree = "<group>"; };
+		B875801F21406A72009F4711 /* AlarmsDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsDetailTableViewController.swift; sourceTree = "<group>"; };
+		B875802121406AAD009F4711 /* Alarm controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alarm controller.swift"; sourceTree = "<group>"; };
 		B8A2FF0E213DC81C00A87A6E /* AlarmAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlarmAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A2FF11213DC81C00A87A6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8A2FF16213DC81C00A87A6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -35,11 +43,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B875801B21406A12009F4711 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B8758019214069DD009F4711 /* AlarmTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B875801C21406A26009F4711 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B875801D21406A53009F4711 /* AlarmsTableViewController.swift */,
+				B875801F21406A72009F4711 /* AlarmsDetailTableViewController.swift */,
+				B875802121406AAD009F4711 /* Alarm controller.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		B8A2FF05213DC81C00A87A6E = {
 			isa = PBXGroup;
 			children = (
 				B8A2FF25213DEDB700A87A6E /* UI */,
+				B875801B21406A12009F4711 /* Views */,
 				B8A2FF26213DEDC900A87A6E /* Model */,
+				B875801C21406A26009F4711 /* Controllers */,
 				B8A2FF27213DEDDD00A87A6E /* Resources */,
 				B8A2FF0F213DC81C00A87A6E /* Products */,
 			);
@@ -152,7 +180,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8A2FF12213DC81C00A87A6E /* AppDelegate.swift in Sources */,
+				B875801E21406A53009F4711 /* AlarmsTableViewController.swift in Sources */,
+				B875802221406AAD009F4711 /* Alarm controller.swift in Sources */,
+				B875802021406A72009F4711 /* AlarmsDetailTableViewController.swift in Sources */,
 				B8A2FF24213DEDB000A87A6E /* Alarm.swift in Sources */,
+				B875801A214069DD009F4711 /* AlarmTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +330,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4C42U55752;
-				INFOPLIST_FILE = AlarmAssignment/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,7 +348,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4C42U55752;
-				INFOPLIST_FILE = AlarmAssignment/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

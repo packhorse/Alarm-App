@@ -11,16 +11,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Alarms Table View Controller-->
         <scene sceneID="Rxd-x3-gbf">
             <objects>
-                <tableViewController id="5cz-Md-aku" sceneMemberID="viewController">
+                <tableViewController id="5cz-Md-aku" customClass="AlarmsTableViewController" customModule="AlarmAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="A2f-Nu-3sS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" rowHeight="125" id="nFH-Ip-N6d">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" rowHeight="125" id="nFH-Ip-N6d" customClass="AlarmTableViewCell" customModule="AlarmAssignment" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nFH-Ip-N6d" id="VdE-Pa-w6N">
@@ -29,6 +29,9 @@
                                     <subviews>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hcQ-sn-aZu">
                                             <rect key="frame" x="295" y="47" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="alarmSwitch:" destination="nFH-Ip-N6d" eventType="valueChanged" id="eaN-qV-gdZ"/>
+                                            </connections>
                                         </switch>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="tcX-GO-XGk">
                                             <rect key="frame" x="16" y="29" width="50" height="66.5"/>
@@ -57,7 +60,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="9b9-od-s2B" kind="show" id="mcC-35-OWG"/>
+                                    <outlet property="alarmSwitch" destination="hcQ-sn-aZu" id="sWM-Ik-hj8"/>
+                                    <outlet property="nameLabel" destination="VYs-BP-cAZ" id="sN6-7K-yg2"/>
+                                    <outlet property="timeLabel" destination="fl0-W2-hNc" id="8C0-0K-RZG"/>
+                                    <segue destination="9b9-od-s2B" kind="show" identifier="toSongVC" id="mcC-35-OWG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -69,7 +75,7 @@
                     <navigationItem key="navigationItem" id="2uV-6O-ZSc">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ACJ-1d-U0n">
                             <connections>
-                                <segue destination="9b9-od-s2B" kind="show" id="dsR-JC-j18"/>
+                                <segue destination="9b9-od-s2B" kind="show" identifier="toAlarmVC" id="5Qy-9w-rtM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -81,7 +87,7 @@
         <!--Set Alarm-->
         <scene sceneID="iud-8O-pyt">
             <objects>
-                <viewController id="9b9-od-s2B" sceneMemberID="viewController">
+                <viewController id="9b9-od-s2B" customClass="AlarmDetailViewController" customModule="AlarmAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gL2-Kr-NqZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,6 +164,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dsR-JC-j18"/>
+        <segue reference="mcC-35-OWG"/>
     </inferredMetricsTieBreakers>
 </document>
